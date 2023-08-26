@@ -1,0 +1,13 @@
+10 simulations: 0m0.005s
+100 simulations: 0m0.041s
+1000 simulations: 0m0.370s
+10000 simulations: 0m3.392s
+100000 simulations: 0m35.012s
+1000000 simulations: 6m27.850s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?: As the number of simulations increased, the predictions became more accurate and consistent. The teams with higher FIFA ratings tended to have a higher chance of winning, which was reflected in the simulation results.
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?: The predictions start to stabilize and show consistent trends around 100,000 simulations. Therefore, after around 100,000 simulations, the predictions could be considered "good enough" while balancing computational cost.

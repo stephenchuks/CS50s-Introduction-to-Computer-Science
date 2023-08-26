@@ -1,28 +1,28 @@
-#include "cs50.h"
+#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
     // Prompt for start size
-    int startSize;
+    int start_size;
     do
     {
-        startSize = get_int("Start size: ");
+        start_size = get_int("Start size: ");
     }
-    while (startSize < 9);
+    while (start_size < 9);
 
     // Prompt for end size
-    int endSize;
+    int end_size;
     do
     {
-        endSize = get_int("End size: ");
+        end_size = get_int("End size: ");
     }
-    while (endSize < startSize);
+    while (end_size < start_size);
 
-    // Calculate number of years until we reach threshold
+    // Calculate long it takes to reach threshhold - in years
     int years = 0;
-    int population = startSize;
-    while (population < endSize)
+    int population = start_size;
+    while (population < end_size)
     {
         int born = population / 3;
         int passedAway = population / 4;
@@ -33,6 +33,6 @@ int main(void)
     // Print number of years
     printf("Years: %i\n", years);
 
-    // Return 0 to indicate successful execution
+    // Return 0 to show it executed successfully
     return 0;
 }

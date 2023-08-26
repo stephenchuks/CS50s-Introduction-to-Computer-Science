@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome to the Finance App</h1>
+    <p>This is the home page of the Finance App.</p>
+
+    <h2>Your Portfolio</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price per Share</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["name"] }}</td>
+                    <td>{{ stock["total_shares"] }}</td>
+                    <td>{{ stock["price"]|usd }}</td>
+                    <td>{{ stock["value"]|usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Cash Balance: {{ cash|usd }}</h2>
+    <h2>Total Portfolio Value: {{ total_value|usd }}</h2>
+    <h2>Grand Total: {{ grand_total|usd }}</h2>
+{% endblock %}

@@ -1,0 +1,1 @@
+SELECT DISTINCT people.name FROM people JOIN stars AS s1 ON people.id = s1.person_id JOIN movies ON s1.movie_id = movies.id JOIN stars AS s2 ON movies.id = s2.movie_id JOIN people AS kb ON s2.person_id = kb.id WHERE kb.name = 'Kevin Bacon' AND kb.birth = 1958 AND people.name <> 'Kevin Bacon';

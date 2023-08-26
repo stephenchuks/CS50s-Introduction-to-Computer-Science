@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // JavaScript code for handling user interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Part 1: Multiple Choice
+            const buttons = document.querySelectorAll('.multiple-choice button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isCorrect = button.getAttribute('data-correct') === 'true';
+                    button.style.backgroundColor = isCorrect ? 'green' : 'red';
+                    const resultMessage = isCorrect ? 'Correct!' : 'Incorrect';
+                    button.parentElement.querySelector('.result-message').textContent = resultMessage;
+                });
+            });
+
+            // Part 2: Free Response
+            const responseInput = document.querySelector('.free-response input[type="text"]');
+            const confirmationButton = document.querySelector('.free-response button');
+
+            confirmationButton.addEventListener('click', () => {
+                const userResponse = responseInput.value.toLowerCase();
+                const correctAnswer = 'mount everest'; // Change this to the correct answer
+                const isCorrect = userResponse === correctAnswer;
+
+                responseInput.style.backgroundColor = isCorrect ? 'green' : 'red';
+                const resultMessage = isCorrect ? 'Correct!' : 'Incorrect';
+                responseInput.parentElement.querySelector('.result-message').textContent = resultMessage;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section multiple-choice">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>What is the capital of France?</h3>
+            <button data-correct="false">Berlin</button>
+            <button data-correct="false">Madrid</button>
+            <button data-correct="true">Paris</button>
+            <p class="result-message"></p>
+        </div>
+
+        <div class="section free-response">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>What is the highest mountain in the world?</h3>
+            <input type="text" placeholder="Your answer">
+            <button>Confirm</button>
+            <p class="result-message"></p>
+        </div>
+    </div>
+</body>
+</html>

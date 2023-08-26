@@ -1,0 +1,12 @@
+sort1 uses:Bubble sort
+
+How do you know?:It appears to perform well on already sorted or nearly sorted lists, with execution times significantly lower for sorted inputs compared to other algorithms. This behavior is consistent with bubble sort.  The execution time increases as the list becomes more disordered.
+
+
+sort2 uses:Merge sort
+
+How do you know?: The times for sort2 seem relatively consistent across different input types and sizes, which might indicate a more stable performance regardless of input order. Merge sort could be a candidate, as it tends to have a consistent time complexity regardless of input order.
+
+sort3 uses:Selection sort
+
+How do you know?: It exhibits poorer performance on larger input sizes, especially when the input is more disordered. This could be indicative of an algorithm  like selection sort.
